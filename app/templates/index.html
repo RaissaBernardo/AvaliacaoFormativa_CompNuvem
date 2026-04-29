@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Contatos</title>
+    <title>Pet Vida</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,7 +63,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Cadastro de Contatos</h1>
+        <h1>Cadastro de Clientes</h1>
 
         <form method="POST">
             <input type="text" name="nome" placeholder="Nome" required>
@@ -72,7 +72,7 @@
             <button type="submit">Cadastrar</button>
         </form>
 
-        <h2>Contatos cadastrados</h2>
+        <h2>Clientes cadastrados</h2>
         <table>
             <thead>
                 <tr>
@@ -83,16 +83,89 @@
                 </tr>
             </thead>
             <tbody>
-                {% for contato in contatos %}
+                {% for cliente in clientes %}
                 <tr>
-                    <td>{{ contato[0] }}</td>
-                    <td>{{ contato[1] }}</td>
-                    <td>{{ contato[2] }}</td>
-                    <td>{{ contato[3] }}</td>
+                    <td>{{ cliente[0] }}</td>
+                    <td>{{ cliente[1] }}</td>
+                    <td>{{ cliente[2] }}</td>
+                    <td>{{ cliente[3] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+
+    <div class="container">
+        <h1>Cadastro de Pets</h1>
+
+        <form method="POST">
+            <input type="text" name="nome" placeholder="Nome do pet" required>
+            <input type="text" name="tipo" placeholder="Tipo do pet(cachorro, gato, etc.)" required>
+            <input type="text" name="raça" placeholder="Raça" required>
+            <input type="text" name="idade" placeholder="Idade" required>
+            <input type="text" name="cliente_id" placeholder="ID do cliente" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <h2>Pets cadastrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Raça</th>
+                    <th>Idade</th>
+                    <th>Cliente ID</th>
+            </thead>
+            <tbody>
+                {% for pet in pets %}
+                <tr>
+                    <td>{{ pet[0] }}</td>
+                    <td>{{ pet[1] }}</td>
+                    <td>{{ pet[2] }}</td>
+                    <td>{{ pet[3] }}</td>
+                    <td>{{ pet[4] }}</td>
+                    <td>{{ pet[5] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h1>Serviços(Banho e Tosa)</h1>
+
+        <form method="POST">
+            <input type="text" name="pet_atendido" placeholder="Nome do Pet" required>
+            <input type="text" name="tipo" placeholder="Tipo do serviço (banho, tosa, etc.)" required>
+           <input type="date" name="data" placeholder="Data do serviço (YYYY-MM-DD)" required>
+            <input type="text" name="valor" placeholder="Valor" required>
+            <input type="text" name="pet_id" placeholder="ID do pet" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <h2>Serviços cadastrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Pet ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for serviço in serviços %}
+                <tr>
+                    <td>{{ serviço[0] }}</td>
+                    <td>{{ serviço[1] }}</td>
+                    <td>{{ serviço[2] }}</td>
+                    <td>{{ serviço[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 </body>
 </html>
