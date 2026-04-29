@@ -139,7 +139,7 @@
         <form method="POST">
             <input type="text" name="pet_atendido" placeholder="Nome do Pet" required>
             <input type="text" name="tipo" placeholder="Tipo do serviço (banho, tosa, etc.)" required>
-           <input type="date" name="data" placeholder="Data do serviço (YYYY-MM-DD)" required>
+            <input type="date" name="data" placeholder="Data do serviço (YYYY-MM-DD)" required>
             <input type="text" name="valor" placeholder="Valor" required>
             <input type="text" name="pet_id" placeholder="ID do pet" required>
             <button type="submit">Cadastrar</button>
@@ -167,5 +167,78 @@
                 {% endfor %}
             </tbody>
         </table>
+
+         <div class="container">
+             <h1>Fornecedores</h1>
+            
+        <form method="POST">
+        <input type="text" name="nome" placeholder="Nome" required>
+            <input type="text" name="telefone" placeholder="Telefone" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="text" name="produto" placeholder="Produto fornecido" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <h2>Fornecedores cadastrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Produto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fornecedor in fornecedores %}
+                <tr>
+                    <td>{{ fornecedor[0] }}</td>
+                    <td>{{ fornecedor[1] }}</td>
+                    <td>{{ fornecedor[2] }}</td>
+                    <td>{{ fornecedor[3] }}</td>
+                    <td>{{ fornecedor[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="container">
+             <h1>Vendas</h1>
+            
+        <form method="POST">
+            <input type="text" name="cliente" placeholder="Nome do cliente" required>
+            <input type="text" name="produto" placeholder="Produto vendido" required>
+            <input type="text" name="quantidade" placeholder="Quantidade vendida" required>
+            <input type="date" name="data" placeholder="Data da venda (YYYY-MM-DD)" required>
+            <input type="text" name="valor" placeholder="Valor total" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <h2>Vendas cadastradas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do cliente</th>
+                    <th>Quantidade</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venda in vendas %}
+                <tr>
+                    <td>{{ venda[0] }}</td>
+                    <td>{{ venda[1] }}</td>
+                    <td>{{ venda[2] }}</td>
+                    <td>{{ venda[3] }}</td>
+                    <td>{{ venda[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    
 </body>
 </html>
