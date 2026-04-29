@@ -1,0 +1,32 @@
+apiVerion: v1
+kind: ConfigMap
+metadata: 
+  name: mysql-initdb
+  namespace: PetLove
+data: 
+  init.sql: |
+    CREATE TABLE clientes (
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      nome VARCHAR(100) NOT NULL,
+      telefone VARCHAR(20),
+      email VARCHAR(100)
+    );
+
+    CREATE TABLE pets (
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      nome_pet VARCHAR(100) NOT NULL,
+      tipo VARCHAR(50),         -- cachorro, gato, etc.
+      raca VARCHAR(100),
+      idade INT,
+      cliente_responsavel INT,
+      FOREIGN KEY (cliente_responsavel) REFERENCES clientes(id)
+    );
+
+    CREATE TABLE atendimentos (
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      pet_id INT NOT NULL,
+      tipo_servico VARCHAR(50),   -- banho, tosa, etc.
+      data_atendimento DATE,
+      valor DECIMAL(10,2),
+      FOREIGN KEY (pet_id) REFERENCES pets(id)
+    );
