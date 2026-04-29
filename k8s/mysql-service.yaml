@@ -1,0 +1,12 @@
+apiVerion:
+kind: Service
+metadata:
+  name: mysql-service
+  namespace: PetLove
+spec:
+  selector:
+    app: mysql-config
+  ports: 
+    - port: 3306
+      targetPort: 3306
+  clusterIP: none
