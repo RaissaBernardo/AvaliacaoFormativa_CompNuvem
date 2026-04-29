@@ -84,19 +84,18 @@
         }
 
         input:focus {
-            border-color: #ff7a18;
-            box-shadow: 0 0 6px rgba(255, 122, 24, 0.5);
+            border-color: #ee6a0d;
+            box-shadow: 0 0 6px rgba(238, 106, 13, 0.5);
         }
 
         button {
             padding: 14px;
             border-radius: 10px;
             border: none;
-            background: linear-gradient(135deg, #ff7a18, #ffb347);
+            background: linear-gradient(135deg, #ee6a0d, #ffb347);
             color: #1c1c1c;
             font-weight: bold;
             font-size: 18px;
-            /* 👈 letras maiores */
             cursor: pointer;
             transition: 0.3s;
         }
@@ -138,9 +137,10 @@
 
         .title {
             text-align: center;
-            font-size: 36px;
-            color: #ff7a18;
+            font-size: 50px;
+            color: #e9670a;
             margin-bottom: 30px;
+            
         }
     </style>
 </head>
@@ -222,7 +222,7 @@
                             <td>{{ pet[4] }}</td>
                             <td>{{ pet[5] }}</td>
                         </tr>
-                        {% endfor %}
+                        <!-- {% endfor %} -->
                     </tbody>
                 </table>
             </div>
