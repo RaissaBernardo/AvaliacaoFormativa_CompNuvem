@@ -1,4 +1,4 @@
- const pages = {
+const pages = {
         "/home": `
                 <div class="container">
                     <h1>Painel Principal</h1>

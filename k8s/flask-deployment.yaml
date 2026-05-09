@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: cadastro-flask:1.0
+          image: petlove:1.0
           ports:
             - containerPort: 5000
           env:
